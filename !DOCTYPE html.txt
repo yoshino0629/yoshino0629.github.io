@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Simple Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            <h2>ブログの最初の記事</h2>
+            <p>ここにブログの本文が入ります。これはサンプルテキストです。</p>
+        </article>
+        <article>
+            <h2>ブログの2つ目の記事</h2>
+            <p>別の記事の内容をここに追加できます。これもサンプルテキストです。</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Simple Blog</p>
+    </footer>
+</body>
+</html>
