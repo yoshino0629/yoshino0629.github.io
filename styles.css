@@ -55,3 +55,26 @@ footer {
     padding: 1rem 0;
     margin-top: 20px;
 }
+
+/* 以下のコードを styles.css の最後に追加します */
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.date {
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
