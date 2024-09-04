@@ -19,20 +19,30 @@
         </nav>
     </header>
     
-    <main>
-        <article>
-            <h2>ブログの最初の記事</h2>
-            <p>ここにブログの本文が入ります。これはサンプルテキストです。</p>
-             <a href="article_template.html">続きを読む</a>
-        </article>
-        <article>
-            <h2>ブログの2つ目の記事</h2>
-            <p>別の記事の内容をここに追加できます。これもサンプルテキストです。</p>
-        </article>
+       <main id="blog-posts">
+        <!-- ここにJavaScriptが記事を動的に挿入します -->
     </main>
 
     <footer>
         <p>&copy; 2024 My Simple Blog</p>
     </footer>
+
+    <script>
+        fetch('articles.json')
+        .then(response => response.json())
+        .then(data => {
+            const blogPostsContainer = document.getElementById('blog-posts');
+            data.forEach(article => {
+                const articleElement = document.createElement('article');
+                articleElement.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p>${article.intro}</p>
+                    <a href="${article.link}">続きを読む</a>
+                `;
+                blogPostsContainer.appendChild(articleElement);
+            });
+        })
+        .catch(error => console.error('Error fetching the articles:', error));
+    </script>
 </body>
 </html>
