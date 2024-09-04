@@ -1,18 +1,9 @@
 [
     {
-         "title": "ChatGPTに聞く自作HPの作り方",
+        "title": "ChatGPTに聞く自作HPの作り方",
         "intro": "自作のホームページを作成する方法について、ChatGPTからアドバイスをもらいながら進めます。",
-        "link": "article/article1.html" 
-    },
-    {
-        "title": "テスト2",
-        "intro": "テスト2冒頭。",
-        "link": "article2.html"
+        "link": "article/article1.html"
     }
     // 新しい記事を追加する際には、ここに新しいオブジェクトを追加します。
-        {
-        "title": "テスト3",
-        "intro": "テスト3冒頭。",
-        "link": "article3.html"
-    }
+
 ]
