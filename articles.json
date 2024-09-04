@@ -2,7 +2,7 @@
     {
          "title": "ChatGPTに聞く自作HPの作り方",
         "intro": "自作のホームページを作成する方法について、ChatGPTからアドバイスをもらいながら進めます。",
-        "link": "article/article1.html"  // 変更点：フォルダ名を追加
+        "link": "article/article1.html" 
     },
     {
         "title": "テスト2",
