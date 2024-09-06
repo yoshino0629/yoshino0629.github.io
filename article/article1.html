@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPTに聞く自作HPの作り方 - 太郎's基地</title>
+    <title>テストページ - 太郎's基地</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>太郎's基地</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-<main>
+    <div id="header"></div> <!-- ヘッダー読み込み用 -->
+
+    <main>
      <article>
             <h2>ChatGPTに記事を書いてくださいとお願いしてみました</h2>
              <p>とりあえず最初の記事としてテスト的な意味も込めてアップロードしてみます。以下私の言葉ではなくChatGPTをから出力されたものをコピペしたものです。</p>
@@ -103,8 +94,22 @@ main {
         </article>
     </main>
 
-    <footer>
-        <p>&copy; 2024 My Blog</p>
-    </footer>
+    <div id="footer"></div> <!-- フッター読み込み用 -->
+
+    <script>
+        // ヘッダーを読み込む
+        fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+
+        // フッターを読み込む
+        fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+    </script>
 </body>
 </html>
