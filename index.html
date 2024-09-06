@@ -9,15 +9,14 @@
 <body>
     <div id="header"></div> <!-- ヘッダー読み込み用 -->
     
-       <main id="blog-posts">
+    <main id="blog-posts">
         <!-- ここにJavaScriptが記事を動的に挿入します -->
     </main>
 
-    <footer>
-        <p>&copy; 2024 My Simple Blog</p>
-    </footer>
+    <div id="footer"></div> <!-- フッター読み込み用 -->
 
     <script>
+        // 記事を動的に挿入する
         fetch('articles.json')
         .then(response => response.json())
         .then(data => {
@@ -33,7 +32,15 @@
             });
         })
         .catch(error => console.error('Error fetching the articles:', error));
-    // フッターを読み込む
+
+        // ヘッダーを読み込む
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+
+        // フッターを読み込む
         fetch('footer.html')
         .then(response => response.text())
         .then(data => {
