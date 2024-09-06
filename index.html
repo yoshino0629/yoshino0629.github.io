@@ -26,6 +26,7 @@
                 articleElement.innerHTML = `
                     <h2>${article.title}</h2>
                     <p>${article.intro}</p>
+                    <p><small>投稿日: ${article.date}</small></p> <!-- 日付を表示 -->
                     <a href="${article.link}">続きを読む</a>
                 `;
                 blogPostsContainer.appendChild(articleElement);
