@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | 太郎's基地</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>太郎's基地</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>自己紹介</h2>
+            <p>こんにちは、私は太郎と申します。太郎's基地では、自作のホームページ作成やプログラミングに関する内容を中心に発信しています。</p>
+            <p>私は学生時代からプログラミングやデジタルクリエイティブに興味を持ち、現在もその知識を深めています。このブログでは、その過程で学んだことや試行錯誤した内容を共有しています。</p>
+        </section>
+
+        <section>
+            <h2>記事の内容について</h2>
+            <p>このブログでは、以下のテーマを中心に記事を執筆していく予定です：</p>
+            <ul>
+                <li>HTMLやCSSを使った自作ホームページ作成方法</li>
+                <li>ブログ運営に役立つツールや技術の紹介</li>
+                <li>SEOやアクセス数向上のためのテクニック</li>
+                <li>プログラミングの基本知識と応用技術</li>
+                <li>その他、デジタルコンテンツやクリエイティブに関する話題</li>
+            </ul>
+            <p>読者の皆さんと一緒に成長しながら、様々なコンテンツを提供していきますので、ぜひご期待ください！</p>
+        </section>
+
+        <section>
+            <h3>ページ作成日:</h3>
+            <p id="date"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 太郎's基地</p>
+    </footer>
+
+    <script>
+        // 現在の日付を取得して表示
+        const dateElement = document.getElementById('date');
+        const today = new Date();
+        const formattedDate = today.getFullYear() + '年' + (today.getMonth() + 1) + '月' + today.getDate() + '日';
+        dateElement.textContent = formattedDate;
+    </script>
+</body>
+</html>
