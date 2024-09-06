@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>太郎's基地</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div> <!-- ヘッダー読み込み用 -->
     
     <main>
         <section>
@@ -45,11 +35,23 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 太郎's基地</p>
-    </footer>
+    <div id="footer"></div> <!-- フッター読み込み用 -->
 
     <script>
+        // ヘッダーを読み込む
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+
+        // フッターを読み込む
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+
         // 現在の日付を取得して表示
         const dateElement = document.getElementById('date');
         const today = new Date();
