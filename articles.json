@@ -4,6 +4,13 @@
         "intro": "ChatGPTに上記のタイトルで記事を書いてくださいとお願いした結果です。",
         "link": "article/article1.html",
         "date": "2024-09-04",
-         "category": "プログラミング"
+        "category": "プログラミング"
+    },
+    {
+        "title": "音楽の歴史",
+        "intro": "音楽の歴史について深掘りする記事です。",
+        "link": "article/article2.html",
+        "date": "2024-08-10",
+        "category": "音楽"
     }
 ]
