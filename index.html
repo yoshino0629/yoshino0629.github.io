@@ -21,16 +21,71 @@
         .then(response => response.json())
         .then(data => {
             const blogPostsContainer = document.getElementById('blog-posts');
+
+            // 月ごとに記事をグループ化
+            const groupedByMonth = {};
+            const groupedByCategory = {};
+
             data.forEach(article => {
-                const articleElement = document.createElement('article');
-                articleElement.innerHTML = `
-                    <h2>${article.title}</h2>
-                    <p>${article.intro}</p>
-                    <p><small>投稿日: ${article.date}</small></p> <!-- 日付を表示 -->
-                    <a href="${article.link}">続きを読む</a>
-                `;
-                blogPostsContainer.appendChild(articleElement);
+                // 日付をパースして、年と月を取得
+                const date = new Date(article.date);
+                const yearMonth = date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0');
+
+                // 月ごとに記事を整理
+                if (!groupedByMonth[yearMonth]) {
+                    groupedByMonth[yearMonth] = [];
+                }
+                groupedByMonth[yearMonth].push(article);
+
+                // カテゴリーごとに記事を整理
+                if (!groupedByCategory[article.category]) {
+                    groupedByCategory[article.category] = [];
+                }
+                groupedByCategory[article.category].push(article);
             });
+
+            // 月ごとの記事を表示
+            for (const month in groupedByMonth) {
+                const monthSection = document.createElement('section');
+                monthSection.innerHTML = `<h2>${month}</h2>`;
+                
+                groupedByMonth[month].forEach(article => {
+                    const articleElement = document.createElement('article');
+                    articleElement.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.intro}</p>
+                        <p><small>投稿日: ${article.date}</small></p> <!-- 日付を表示 -->
+                        <a href="${article.link}">続きを読む</a>
+                    `;
+                    monthSection.appendChild(articleElement);
+                });
+
+                blogPostsContainer.appendChild(monthSection);
+            }
+
+            // カテゴリーごとの記事を表示（例として別セクションに追加）
+            const categoryContainer = document.createElement('div');
+            categoryContainer.innerHTML = `<h2>カテゴリー別記事</h2>`;
+
+            for (const category in groupedByCategory) {
+                const categorySection = document.createElement('section');
+                categorySection.innerHTML = `<h3>${category}</h3>`;
+                
+                groupedByCategory[category].forEach(article => {
+                    const articleElement = document.createElement('article');
+                    articleElement.innerHTML = `
+                        <h4>${article.title}</h4>
+                        <p>${article.intro}</p>
+                        <p><small>投稿日: ${article.date}</small></p> <!-- 日付を表示 -->
+                        <a href="${article.link}">続きを読む</a>
+                    `;
+                    categorySection.appendChild(articleElement);
+                });
+
+                categoryContainer.appendChild(categorySection);
+            }
+
+            blogPostsContainer.appendChild(categoryContainer);
         })
         .catch(error => console.error('Error fetching the articles:', error));
 
